@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <script type="text/javascript" src="./js/obfuscation.js"></script>
+        <title>Test email obfuscation</title>
+    </head>
+    <body>
+
+        <div><a class="eml-protected" >cea4afbda1a0a8bcabab8ea9a3afa7a2e0ada1a3</a></div>
+        <div><a class="eml-protected" >f79a96859cd9849f96839e9b9881b7839f928396d99498d9998d</a></div>
+        <div><a class="eml-protected" ></a>no hash</div>
+        <div class="eml-protected">a div</div>
+
+        <script>           
+            (function() {
+                renderEmailLinks();            
+            })();
+            </script>
+    </body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>        
+        <title>Encode Email</title>
+        <script type="text/javascript" src="./js/obfuscation.js"></script>
+    </head>
+    <body>
+        <h1>Encode</h1>
+
+      <input type="email" id="email">
+      <button onclick="encode()">Encode</button>
+
+      <p id="encoded"></p>
+        <script>           
+          function encode(){
+            const key = Math.floor(Math.random() * 254);
+            const inputEmail = document.getElementById('email').value;
+            let encodedString = pad(key.toString(16));
+            for(let n=0; n < inputEmail.length; n++) {
+              const charCode = inputEmail.charCodeAt(n);
+              const encoded = charCode ^ key;
+              const value = encoded.toString(16);
+              encodedString += pad(value);
+            }
+            const outputElement = document.getElementById('encoded');
+            outputElement.innerText = encodedString;
+          }       
+       </script>
+    </body>
+</html>
